@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsl="http://www.w3.org/2001/XMLSchema-instance"
+	xsl:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	version="2.4">
+
+	<display-name>Hello, World! Application</display-name>
+	<description>
+		This is a simple web application
+	</description>
+	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:ilovespring.xml</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>MainServlet</servlet-name>
+		<servlet-class>kickstarter.control.MainServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MainServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>HelloWorld</servlet-name>
+		<servlet-class>kickstarter.control.HelloWorld</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HelloWorld</servlet-name>
+		<url-pattern>/HelloWorld</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>HelloForm</servlet-name>
+		<servlet-class>kickstarter.control.HelloForm</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HelloForm</servlet-name>
+		<url-pattern>/HelloForm</url-pattern>
+	</servlet-mapping>
+
+</web-app> 
