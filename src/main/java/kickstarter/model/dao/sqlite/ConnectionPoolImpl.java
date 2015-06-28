@@ -1,4 +1,6 @@
-package kickstarter.model.dao;
+package kickstarter.model.dao.sqlite;
+
+import kickstarter.model.dao.ConnectionPool;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

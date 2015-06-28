@@ -1,4 +1,4 @@
-package kickstarter.model.dao;
+package kickstarter.model.dao.sqlite;
 
 import java.util.List;
 import java.util.Map;
@@ -6,6 +6,8 @@ import java.util.Map;
 import kickstarter.entities.Answer;
 import kickstarter.entities.Project;
 import kickstarter.entities.Question;
+import kickstarter.model.dao.ConnectionPool;
+import kickstarter.model.dao.QuestionsAndAnswersDao;
 
 public class QuestionsAndAnswersDaoImpl implements QuestionsAndAnswersDao {
 

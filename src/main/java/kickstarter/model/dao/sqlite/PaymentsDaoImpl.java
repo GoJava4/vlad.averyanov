@@ -1,4 +1,7 @@
-package kickstarter.model.dao;
+package kickstarter.model.dao.sqlite;
+
+import kickstarter.model.dao.ConnectionPool;
+import kickstarter.model.dao.PaymentsDao;
 
 public class PaymentsDaoImpl implements PaymentsDao {
 

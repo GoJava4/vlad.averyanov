@@ -1,4 +1,4 @@
-package kickstarter.model.dao;
+package kickstarter.model.dao.sqlite;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kickstarter.entities.Category;
+import kickstarter.model.dao.CategoriesDao;
+import kickstarter.model.dao.ConnectionPool;
 
 public class CategoriesDaoImpl implements CategoriesDao {
 

@@ -1,4 +1,4 @@
-package kickstarter.control;
+package kickstarter.control.console;
 
 import kickstarter.model.dao.Dao;
 import kickstarter.view.pages.CategoriesPage;

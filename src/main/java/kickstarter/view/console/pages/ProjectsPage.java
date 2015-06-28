@@ -1,8 +1,8 @@
-package kickstarter.view.pages;
+package kickstarter.view.console.pages;
 
 import java.util.List;
 
-import kickstarter.control.DataIOTypeStorage;
+import kickstarter.control.console.DataIOTypeStorage;
 import kickstarter.entities.Project;
 import kickstarter.model.dao.Dao;
 

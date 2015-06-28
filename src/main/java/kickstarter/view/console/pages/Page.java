@@ -1,4 +1,4 @@
-package kickstarter.view.pages;
+package kickstarter.view.console.pages;
 
 public interface Page {
 

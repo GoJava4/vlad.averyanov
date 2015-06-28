@@ -1,4 +1,4 @@
-package kickstarter.model.repositories;
+package kickstarter.model.console.repositories;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package kickstarter.control;
+package kickstarter.control.console;
 
 import java.sql.SQLException;
 

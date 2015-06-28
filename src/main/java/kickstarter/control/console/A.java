@@ -1,4 +1,4 @@
-package kickstarter.control;
+package kickstarter.control.console;
 
 class A { 
 	static {System.out.println("static A");}

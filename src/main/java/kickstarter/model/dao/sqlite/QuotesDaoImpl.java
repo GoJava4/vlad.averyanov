@@ -1,4 +1,4 @@
-package kickstarter.model.dao;
+package kickstarter.model.dao.sqlite;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import kickstarter.entities.Quote;
+import kickstarter.model.dao.ConnectionPool;
+import kickstarter.model.dao.QuotesDao;
 
 public class QuotesDaoImpl implements QuotesDao {
 	
@@ -20,7 +22,7 @@ public class QuotesDaoImpl implements QuotesDao {
 		Quote quote = null;
 		try {
 		Statement statement = connection.createStatement();
-		ResultSet rs = statement.executeQuery("SELECT context, author FROM Quotes ORDER BY RANDOM() LIMIT 1;");
+		ResultSet rs = statement.executeQuery("SELECT `context`, `author` FROM quotes ORDER BY RAND() LIMIT 0,1;");
 			while (rs.next()){
 				quote = new Quote(rs.getString("context"), rs.getString("author"));
 			}

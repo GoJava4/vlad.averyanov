@@ -1,4 +1,4 @@
-package kickstarter.model.dao;
+package kickstarter.model.dao.sqlite;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kickstarter.entities.Project;
+import kickstarter.model.dao.ConnectionPool;
+import kickstarter.model.dao.ProjectsDao;
 
 public class ProjectsDaoImpl implements ProjectsDao {
 

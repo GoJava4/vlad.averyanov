@@ -1,4 +1,4 @@
-package kickstarter.control;
+package kickstarter.control.console;
 
 class B extends A {
 	{System.out.println("non-static B");}

@@ -1,4 +1,4 @@
-package kickstarter.control;
+package kickstarter.control.console;
 
 import kickstarter.view.Reader;
 import kickstarter.view.Writer;
