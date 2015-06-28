@@ -1,4 +1,4 @@
-package kickstarter.control;
+package kickstarter.servlets;
 
 //Import required java libraries
 import java.io.*;

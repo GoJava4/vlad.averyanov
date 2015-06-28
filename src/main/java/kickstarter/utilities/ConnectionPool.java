@@ -1,4 +1,4 @@
-package kickstarter.model.dao;
+package kickstarter.utilities;
 
 import java.sql.Connection;
 

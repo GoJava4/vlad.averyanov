@@ -1,7 +1,4 @@
-package kickstarter.control;
-
-import org.springframework.web.context.ContextLoader;
-import org.springframework.web.context.WebApplicationContext;
+package kickstarter.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 
 import kickstarter.model.dao.Dao;
 import kickstarter.entities.Quote;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 public class HelloWorld extends HttpServlet {
 	@Autowired
@@ -41,9 +38,7 @@ public class HelloWorld extends HttpServlet {
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
-		WebApplicationContext context = ContextLoader.getCurrentWebApplicationContext();
-		final AutowireCapableBeanFactory beanFactory = context.getAutowireCapableBeanFactory();
-		beanFactory.autowireBean(this);
+		SpringBeanAutowiringSupport.processInjectionBasedOnServletContext(this, config.getServletContext());
 	}
 
 }
