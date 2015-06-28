@@ -8,9 +8,14 @@
 						http://www.springframework.org/schema/context/spring-context.xsd">
 	<context:annotation-config />
 	
-	<bean id="connPool" class="kickstarter.model.dao.ConnectionPoolImpl"/>
+	<bean id="connPool" class="kickstarter.utilities.ConnectionPoolMySQLImpl"/>
 	
-	<bean id="genericDao" class="kickstarter.model.dao.DaoImpl">
-		<constructor-arg index="0" ref="connPool"/>
-	</bean>	
+	<bean id="quotesDAO" class="kickstarter.model.dao.mysql.QuotesDAOMySQLImpl">
+		<constructor-arg ref="connPool"/>
+	</bean>
+
+	<bean id="quotesService" class="kickstarter.model.services.QuotesService">
+		<constructor-arg ref="quotesDAO"/>
+	</bean>
+
 </beans>
