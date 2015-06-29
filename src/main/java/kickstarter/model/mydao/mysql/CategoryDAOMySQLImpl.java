@@ -1,7 +1,7 @@
 package kickstarter.model.mydao.mysql;
 
 import kickstarter.entities.Category;
-import kickstarter.model.mydao.CategoriesDAO;
+import kickstarter.model.mydao.CategoryDAO;
 import kickstarter.model.mydao.exceptions.DBException;
 import kickstarter.utilities.ConnectionPool;
 
@@ -12,11 +12,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoriesDAOMySQLImpl implements CategoriesDAO {
+public class CategoryDAOMySQLImpl implements CategoryDAO {
 
     Connection connection;
 
-    public CategoriesDAOMySQLImpl(ConnectionPool connectionPool) {
+    public CategoryDAOMySQLImpl(ConnectionPool connectionPool) {
         connection = connectionPool.getConnection();
     }
 

@@ -1,7 +1,9 @@
 package kickstarter.model.dao;
 
-/**
- * Created by User on 29.06.2015.
- */
-public interface QuoteDAO {
+import kickstarter.entities.Quote;
+
+public interface QuoteDAO extends DAO<Quote> {
+
+    public Quote getRandom();
+
 }
