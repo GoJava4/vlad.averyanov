@@ -1,8 +1,7 @@
 package kickstarter.model.services;
 
 import kickstarter.entities.Category;
-import kickstarter.model.mydao.CategoriesDAO;
-import kickstarter.model.mydao.exceptions.DBException;
+import kickstarter.model.dao.CategoryDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -10,13 +9,13 @@ import java.util.List;
 public class CategoryService {
 
     @Autowired
-    CategoriesDAO categoriesDAO;
+    CategoryDAO categoryDAO;
 
-    public CategoryService(CategoriesDAO categoriesDAO) {
-        this.categoriesDAO = categoriesDAO;
+    public CategoryService(CategoryDAO categoryDAO) {
+        this.categoryDAO = categoryDAO;
     }
 
-    public List<Category> getAllCategories() throws DBException {
-        return categoriesDAO.getAllCategories();
+    public List<Category> getAllCategories(){
+        return categoryDAO.getAllCategories();
     }
 }

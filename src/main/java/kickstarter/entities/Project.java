@@ -1,5 +1,7 @@
 package kickstarter.entities;
 
+import org.joda.time.DateTime;
+
 public class Project {
 
 	private int id;
@@ -8,56 +10,46 @@ public class Project {
 	private String shortDescription;
 	private int moneyGoal;
 	private int pledged;
-	private int daysToGo;
+	private int totalDays;
+	private DateTime addingDate;
 	private String fullDescription;
 	private String link;
-	private String FAQ;
-	
-	public Project(int id, int categoryId, String name, String shortDescription, int moneyGoal, int pledged,
-			int daysToGo, String fullDescription, String link, String FAQ) {
-		this.name = name;
-		this.shortDescription = shortDescription;
-		this.moneyGoal = moneyGoal;
-		this.pledged = pledged;
-		this.daysToGo = daysToGo;
-		this.fullDescription = fullDescription;
-		this.link = link;
-		this.FAQ = FAQ;
-		this.categoryId = categoryId;
-		this.id = id;
-	}
-	@Deprecated
-	public Project(String name, String shortDescription, int moneyGoal, int pledged,
-			int daysToGo, String fullDescription, String link, String FAQ, int categoryId, int id) {
-		this.name = name;
-		this.shortDescription = shortDescription;
-		this.moneyGoal = moneyGoal;
-		this.pledged = pledged;
-		this.daysToGo = daysToGo;
-		this.fullDescription = fullDescription;
-		this.link = link;
-		this.FAQ = FAQ;
-		this.categoryId = categoryId;
-		this.id = id;
+
+	public Project() {
 	}
 
-	public Project(String name, String shortDescription, int moneyGoal,
-			int daysToGo, String fullDescription,
-			int categoryId, int id) {
+	public Project(int id, int categoryId, String name, String shortDescription, int moneyGoal, int pledged, int totalDays, DateTime addingDate, String fullDescription, String link) {
+		this.id = id;
+		this.categoryId = categoryId;
 		this.name = name;
 		this.shortDescription = shortDescription;
 		this.moneyGoal = moneyGoal;
-		this.pledged = 0;
-		this.daysToGo = daysToGo;
+		this.pledged = pledged;
+		this.totalDays = totalDays;
+		this.addingDate = addingDate;
 		this.fullDescription = fullDescription;
-		this.link = "URL: " + "http://"+ name + "/main";
-		this.FAQ = "Questions and answers";
-		this.categoryId = categoryId;
-		this.id = id;
+		this.link = link;
 	}
 
 	public String getName() {
 		return name;
+	}
+
+	public int getId() {
+	    return id;
+	}
+
+	public int daysToGo(){
+		DateTime daysLeft = DateTime.now().minusMillis((int)addingDate.getMillis());
+		return millisInDays(daysLeft.getMillis());
+	}
+
+	private int millisInDays(long millis) {
+		return (int)millis/(60*60*1000);
+	}
+
+	public int getCategoryId() {
+		return categoryId;
 	}
 
 	public String getShortDescription() {
@@ -72,8 +64,8 @@ public class Project {
 		return pledged;
 	}
 
-	public int getDaysToGo() {
-		return daysToGo;
+	public int getTotalDays() {
+		return totalDays;
 	}
 
 	public String getFullDescription() {
@@ -84,19 +76,7 @@ public class Project {
 		return link;
 	}
 
-	public String getFAQ() {
-		return FAQ;
-	}
-
-	public int getCategoryId() {
-		return categoryId;
-	}
-
-	public void setCategoryId(int categoryId) {
-		this.categoryId = categoryId;
-	}
-	
-	public int getId() {
-	    return id;
+	public DateTime getAddingDate() {
+		return addingDate;
 	}
 }

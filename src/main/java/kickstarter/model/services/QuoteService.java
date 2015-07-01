@@ -1,20 +1,19 @@
 package kickstarter.model.services;
 
 import kickstarter.entities.Quote;
-import kickstarter.model.mydao.QuotesDAO;
-import kickstarter.model.mydao.exceptions.DBException;
+import kickstarter.model.dao.QuoteDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class QuoteService {
 
     @Autowired
-    QuotesDAO quotesDAO;
+    QuoteDAO quoteDAO;
 
-    public QuoteService(QuotesDAO quotesDAO) {
-        this.quotesDAO = quotesDAO;
+    public QuoteService(QuoteDAO quotesDAO) {
+        this.quoteDAO = quotesDAO;
     }
 
-    public Quote getRandomQuote() throws DBException {
-        return quotesDAO.getRandomQuote();
+    public Quote getRandomQuote() {
+        return quoteDAO.getRandom();
     }
 }

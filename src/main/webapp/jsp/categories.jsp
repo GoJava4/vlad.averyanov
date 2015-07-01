@@ -4,10 +4,22 @@
 <head>
     <title>Categories</title>
 </head>
-<%--@elvariable id="quote" type="kickstarter.entities.Quote>"--%>
+<%--@elvariable id="listOfCategories" type="java.utils.List<Category>"--%>
 <body>
 Your inspiring quote, sir: <br/>
-<c:out value="${quote.getQuoteString}"/>
+<c:out value="${quote}"/>
+<ul>
+<c:forEach var="category" items="${listOfCategories}">
+    <c:url value="/category" var="categoryURL">
+        <c:param name="category-id" value="${category.getId()}"/>
+    </c:url>
+    <li>
+        <h2>
+            <a href="${categoryURL}">${category.getName()}</a>
+        </h2>
+    </li>
+</c:forEach>
+</ul>
 
 </body>
 </html>

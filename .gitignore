@@ -1,0 +1,5 @@
+.idea
+kickstarter.iml
+target
+src/main/java/kickstarter/servlets/HelloForm.java
+src/main/resources/database.db

@@ -7,40 +7,47 @@
 	<description>
 		This is a simple web application
 	</description>
-	
+
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:ilovespring.xml</param-value>
 	</context-param>
 
 	<servlet>
-		<servlet-name>MainServlet</servlet-name>
-		<servlet-class>kickstarter.control.MainServlet</servlet-class>
+		<servlet-name>CategoriesServlet</servlet-name>
+		<servlet-class>kickstarter.servlets.CategoriesServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>MainServlet</servlet-name>
-		<url-pattern>/</url-pattern>
+		<servlet-name>CategoriesServlet</servlet-name>
+		<url-pattern>/categories</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>HelloWorld</servlet-name>
-		<servlet-class>kickstarter.control.HelloWorld</servlet-class>
+		<servlet-name>CategoryServlet</servlet-name>
+		<servlet-class>kickstarter.servlets.CategoryServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>HelloWorld</servlet-name>
-		<url-pattern>/HelloWorld</url-pattern>
+		<servlet-name>CategoryServlet</servlet-name>
+		<url-pattern>/category</url-pattern>
 	</servlet-mapping>
-	
+
+
 	<servlet>
 		<servlet-name>HelloForm</servlet-name>
-		<servlet-class>kickstarter.control.HelloForm</servlet-class>
+		<servlet-class>kickstarter.servlets.HelloForm</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>HelloForm</servlet-name>
 		<url-pattern>/HelloForm</url-pattern>
 	</servlet-mapping>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/jsp/error-404.jsp</location>
+	</error-page>
 
 </web-app> 

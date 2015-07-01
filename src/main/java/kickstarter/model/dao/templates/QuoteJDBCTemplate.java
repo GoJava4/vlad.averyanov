@@ -15,12 +15,11 @@ public class QuoteJDBCTemplate implements QuoteDAO {
     @Override
     public Quote getRandom() {
         String sql = "SELECT content, author FROM quotes ORDER BY RAND() LIMIT 1";
-        Quote quote = jdbcTemplateObject.queryForObject(sql, new QuoteMapper());
-        return quote;
+         return jdbcTemplateObject.queryForObject(sql, new QuoteMapper());
     }
 
     @Override
-    public void setDataSource(DataSource ds) {
+    public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
         this.jdbcTemplateObject = new JdbcTemplate(dataSource);
     }
@@ -29,9 +28,8 @@ public class QuoteJDBCTemplate implements QuoteDAO {
     //don't need it
     public Quote selectById(Integer quoteId) {
         String SQL = "SELECT * FROM quotes WHERE id = ?";
-        Quote quote = jdbcTemplateObject.queryForObject(SQL,
+         return jdbcTemplateObject.queryForObject(SQL,
                 new Object[]{quoteId}, new QuoteMapper());
-        return quote;
     }
 
     @Override

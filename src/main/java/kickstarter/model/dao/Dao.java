@@ -1,10 +1,17 @@
 package kickstarter.model.dao;
 
-import java.sql.SQLException;
+import javax.sql.DataSource;
 
-public interface Dao extends QuotesDao, CategoriesDao, ProjectsDao,
-		QuestionsAndAnswersDao, PaymentsDao {
-	
-	void initData() throws SQLException;
-	
+public interface DAO<T> {
+
+    void setDataSource(DataSource ds);
+
+    T selectById(Integer id);
+
+    void create(T entity);
+
+    void delete(T entity);
+
+    void update(T entity);
+
 }
