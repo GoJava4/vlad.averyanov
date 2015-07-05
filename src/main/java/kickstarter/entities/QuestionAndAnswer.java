@@ -1,12 +1,12 @@
 package kickstarter.entities;
 
-public class Question {
+public class QuestionAndAnswer {
 
     int id;
     int projectId;
     String content;
 
-    public Question(int id, String content, int projectId) {
+    public QuestionAndAnswer(int id, String content, int projectId) {
         this.id = id;
         this.content = content;
         this.projectId = projectId;
