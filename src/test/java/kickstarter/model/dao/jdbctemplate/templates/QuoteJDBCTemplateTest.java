@@ -1,8 +1,6 @@
-package kickstarter.model.dao.templates;
+package kickstarter.model.dao.jdbctemplate.templates;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by User on 03.07.2015.

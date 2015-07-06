@@ -1,21 +1,14 @@
-package kickstarter.model.dao.templates;
+package kickstarter.model.dao.jdbctemplate.templates;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by User on 03.07.2015.
  */
-public class ProjectJDBCTemplateTest {
+public class CategoryJDBCTemplateTest {
 
     @Test
-    public void testGetAllProjects() throws Exception {
-
-    }
-
-    @Test
-    public void testGetAllProjectsOfCategory() throws Exception {
+    public void testGetAllCategories() throws Exception {
 
     }
 

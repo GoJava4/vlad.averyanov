@@ -20,7 +20,7 @@
 
     <!--DAO's & Services-->
     <!--Quotes-->
-    <bean id="quoteJDBCTemplate" class="kickstarter.model.dao.templates.QuoteJDBCTemplate">
+    <bean id="quoteJDBCTemplate" class="kickstarter.model.dao.jdbctemplate.templates.QuoteJDBCTemplate">
         <property name="dataSource"  ref="dataSource"/>
     </bean>
     <bean id="quoteService" class="kickstarter.model.services.QuoteService">
@@ -28,7 +28,7 @@
     </bean>
 
     <!--Categories-->
-    <bean id="categoryJDBCTemplate" class="kickstarter.model.dao.templates.CategoryJDBCTemplate">
+    <bean id="categoryJDBCTemplate" class="kickstarter.model.dao.jdbctemplate.templates.CategoryJDBCTemplate">
         <property name="dataSource"  ref="dataSource"/>
     </bean>
     <bean id="categoryService" class="kickstarter.model.services.CategoryService">
@@ -36,7 +36,7 @@
     </bean>
 
     <!--Projects-->
-    <bean id="projectJDBCTemplate" class="kickstarter.model.dao.templates.ProjectJDBCTemplate">
+    <bean id="projectJDBCTemplate" class="kickstarter.model.dao.jdbctemplate.templates.ProjectJDBCTemplate">
         <property name="dataSource"  ref="dataSource"/>
     </bean>
     <bean id="projectService" class="kickstarter.model.services.ProjectService">
