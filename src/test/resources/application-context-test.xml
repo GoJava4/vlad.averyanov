@@ -2,11 +2,16 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 						http://www.springframework.org/schema/beans/spring-beans.xsd
 						http://www.springframework.org/schema/context
-						http://www.springframework.org/schema/context/spring-context.xsd">
+						http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/tx
+						http://www.springframework.org/schema/tx/spring-tx.xsd">
     <context:annotation-config />
+    <context:component-scan base-package="kickstarter"/>
+    <tx:annotation-driven/>
 
     <!-- Initialization for data source -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
@@ -18,29 +23,13 @@
         <property name="password" value="vlad_averyanov"/>
     </bean>
 
-    <!--DAO's & Services-->
-    <!--Quotes-->
-    <bean id="quoteJDBCTemplate" class="kickstarter.model.dao.jdbctemplate.templates.QuoteJDBCTemplate">
-        <property name="dataSource"  ref="dataSource"/>
-    </bean>
-    <bean id="quoteService" class="kickstarter.model.services.QuoteService">
-        <constructor-arg ref="quoteJDBCTemplate"/>
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:hibernate-test.cfg.xml"/>
     </bean>
 
-    <!--Categories-->
-    <bean id="categoryJDBCTemplate" class="kickstarter.model.dao.jdbctemplate.templates.CategoryJDBCTemplate">
-        <property name="dataSource"  ref="dataSource"/>
-    </bean>
-    <bean id="categoryService" class="kickstarter.model.services.CategoryService">
-        <constructor-arg ref="categoryJDBCTemplate"/>
-    </bean>
-
-    <!--Projects-->
-    <bean id="projectJDBCTemplate" class="kickstarter.model.dao.jdbctemplate.templates.ProjectJDBCTemplate">
-        <property name="dataSource"  ref="dataSource"/>
-    </bean>
-    <bean id="projectService" class="kickstarter.model.services.ProjectService">
-        <constructor-arg ref="projectJDBCTemplate"/>
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
 </beans>
