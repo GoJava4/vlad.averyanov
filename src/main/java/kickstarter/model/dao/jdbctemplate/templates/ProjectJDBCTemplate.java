@@ -1,8 +1,8 @@
-package kickstarter.model.dao.templates;
+package kickstarter.model.dao.jdbctemplate.templates;
 
 import kickstarter.entities.Project;
 import kickstarter.model.dao.ProjectDAO;
-import kickstarter.model.dao.mappers.ProjectMapper;
+import kickstarter.model.dao.jdbctemplate.mappers.ProjectMapper;
 import org.joda.time.DateTime;
 import org.springframework.jdbc.core.JdbcTemplate;
 

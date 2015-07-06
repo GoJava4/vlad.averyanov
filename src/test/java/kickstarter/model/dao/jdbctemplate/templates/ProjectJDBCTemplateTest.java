@@ -1,4 +1,4 @@
-package kickstarter.model.dao.templates;
+package kickstarter.model.dao.jdbctemplate.templates;
 
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseOperation;

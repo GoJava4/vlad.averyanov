@@ -22,21 +22,21 @@
         <constructor-arg ref="dataSource"/>
     </bean>
     <!--Quotes-->
-    <bean id="quoteJDBCTemplate" class="kickstarter.model.dao.templates.QuoteJDBCTemplate">
+    <bean id="quoteJDBCTemplate" class="kickstarter.model.dao.jdbctemplate.templates.QuoteJDBCTemplate">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>
     <bean id="quoteService" class="kickstarter.model.services.QuoteService">
         <constructor-arg ref="quoteJDBCTemplate"/>
     </bean>
     <!--Categories-->
-    <bean id="categoryJDBCTemplate" class="kickstarter.model.dao.templates.CategoryJDBCTemplate">
+    <bean id="categoryJDBCTemplate" class="kickstarter.model.dao.jdbctemplate.templates.CategoryJDBCTemplate">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>
     <bean id="categoryService" class="kickstarter.model.services.CategoryService">
         <constructor-arg ref="categoryJDBCTemplate"/>
     </bean>
     <!--Projects-->
-    <bean id="projectJDBCTemplate" class="kickstarter.model.dao.templates.ProjectJDBCTemplate">
+    <bean id="projectJDBCTemplate" class="kickstarter.model.dao.jdbctemplate.templates.ProjectJDBCTemplate">
         <property name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>
     <bean id="projectService" class="kickstarter.model.services.ProjectService">

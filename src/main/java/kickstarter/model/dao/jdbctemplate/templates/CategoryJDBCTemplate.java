@@ -1,8 +1,8 @@
-package kickstarter.model.dao.templates;
+package kickstarter.model.dao.jdbctemplate.templates;
 
 import kickstarter.entities.Category;
 import kickstarter.model.dao.CategoryDAO;
-import kickstarter.model.dao.mappers.CategoryMapper;
+import kickstarter.model.dao.jdbctemplate.mappers.CategoryMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.List;

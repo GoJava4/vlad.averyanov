@@ -1,8 +1,8 @@
-package kickstarter.model.dao.templates;
+package kickstarter.model.dao.jdbctemplate.templates;
 
 import kickstarter.entities.Quote;
 import kickstarter.model.dao.QuoteDAO;
-import kickstarter.model.dao.mappers.QuoteMapper;
+import kickstarter.model.dao.jdbctemplate.mappers.QuoteMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class QuoteJDBCTemplate implements QuoteDAO {

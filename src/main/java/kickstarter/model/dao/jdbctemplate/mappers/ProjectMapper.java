@@ -1,4 +1,4 @@
-package kickstarter.model.dao.mappers;
+package kickstarter.model.dao.jdbctemplate.mappers;
 
 import kickstarter.entities.Project;
 import org.joda.time.DateTime;
