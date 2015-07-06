@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
     <quotes content="quote 1" author="author 1"/>
-    <quotes content="quote 2" author="author 2"/>
+    <quotes content="Updated Content" author="Updated Author"/>
     <quotes content="quote 3" author="author 3"/>
-    <quotes content="New Content" author="New Author"/>
 </dataset>

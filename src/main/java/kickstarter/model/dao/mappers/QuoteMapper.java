@@ -12,6 +12,7 @@ public class QuoteMapper implements RowMapper<Quote> {
     @Override
     public Quote mapRow(ResultSet rs, int rowNum) throws SQLException {
         return new Quote(
+                rs.getInt("id"),
                 rs.getString("content"),
                 rs.getString("author")
         );

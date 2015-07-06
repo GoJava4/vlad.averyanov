@@ -27,11 +27,6 @@ public class CategoriesServlet extends SpringInitedServlet {
 			req.getRequestDispatcher("jsp/categories.jsp").forward(req, resp);
 	}
 
-	private void showError(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("jsp/error-404.jsp").forward(req, resp);
-		System.out.println("ERROR no quotes");
-	}
-
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {

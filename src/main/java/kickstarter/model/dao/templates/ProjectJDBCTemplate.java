@@ -6,13 +6,15 @@ import kickstarter.model.dao.mappers.ProjectMapper;
 import org.joda.time.DateTime;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import javax.sql.DataSource;
 import java.util.List;
 
 public class ProjectJDBCTemplate implements ProjectDAO {
 
-    private DataSource dataSource;
-    private JdbcTemplate jdbcTemplateObject;
+    private JdbcTemplate jdbcTemplate;
+
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @Override
     public List<Project> getAllProjects() {
@@ -28,13 +30,7 @@ public class ProjectJDBCTemplate implements ProjectDAO {
     private List<Project> getAllProjectsWithCondition(String condition) {
         String sql = "SELECT `id`, `category_id`, `name`, `short_description`, `money_goal`, `pledged`, "
                 + "`total_days`, `adding_date`, `full_description`, `link` FROM `projects`" + condition;
-        return jdbcTemplateObject.query(sql, new ProjectMapper());
-    }
-
-    @Override
-    public void setDataSource(DataSource ds) {
-        this.dataSource = ds;
-        this.jdbcTemplateObject = new JdbcTemplate(dataSource);
+        return jdbcTemplate.query(sql, new ProjectMapper());
     }
 
     @Override
@@ -59,7 +55,7 @@ public class ProjectJDBCTemplate implements ProjectDAO {
                 entity.getFullDescription(),
                 entity.getLink()
         };
-        jdbcTemplateObject.queryForObject(sql, args, new ProjectMapper());
+        jdbcTemplate.update(sql, args);
      }
 
     @Override
@@ -68,7 +64,7 @@ public class ProjectJDBCTemplate implements ProjectDAO {
         Object[] args = {
                 entity.getId()
         };
-        jdbcTemplateObject.update(sql, args);
+        jdbcTemplate.update(sql, args);
     }
 
     @Override
@@ -87,6 +83,6 @@ public class ProjectJDBCTemplate implements ProjectDAO {
                 entity.getFullDescription(),
                 entity.getLink()
         };
-        jdbcTemplateObject.update(sql, args);
+        jdbcTemplate.update(sql, args);
     }
 }

@@ -7,9 +7,6 @@ import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * Created by User on 29.06.2015.
- */
 public class ProjectMapper implements RowMapper<Project> {
 
     @Override
@@ -20,7 +17,7 @@ public class ProjectMapper implements RowMapper<Project> {
                 rs.getString("name"),
                 rs.getString("short_description"),
                 rs.getInt("money_goal"),
-                rs.getInt("money_pledged"),
+                rs.getInt("pledged"),
                 rs.getInt("total_days"),
                 new DateTime(rs.getDate("adding_date")),
                 rs.getString("full_description"),

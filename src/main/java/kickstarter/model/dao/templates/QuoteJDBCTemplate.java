@@ -5,37 +5,33 @@ import kickstarter.model.dao.QuoteDAO;
 import kickstarter.model.dao.mappers.QuoteMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import javax.sql.DataSource;
-
 public class QuoteJDBCTemplate implements QuoteDAO {
 
-    private DataSource dataSource;
-    private JdbcTemplate jdbcTemplateObject;
+    private JdbcTemplate jdbcTemplate;
 
     @Override
-    public Quote getRandom() {
-        String sql = "SELECT content, author FROM quotes ORDER BY RAND() LIMIT 1";
-         return jdbcTemplateObject.queryForObject(sql, new QuoteMapper());
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     @Override
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
-        this.jdbcTemplateObject = new JdbcTemplate(dataSource);
+    public Quote getRandom() {
+        String sql = "SELECT id, content, author FROM quotes ORDER BY RAND() LIMIT 1";
+         return jdbcTemplate.queryForObject(sql, new QuoteMapper());
     }
 
     @Override
     //don't need it
     public Quote selectById(Integer quoteId) {
         String SQL = "SELECT * FROM quotes WHERE id = ?";
-         return jdbcTemplateObject.queryForObject(SQL,
+         return jdbcTemplate.queryForObject(SQL,
                 new Object[]{quoteId}, new QuoteMapper());
     }
 
     @Override
     public void create(Quote entity) {
         String sql = "INSERT INTO quotes (content, author) VALUE (?, ?)";
-        jdbcTemplateObject.update(sql, entity.getContent(), entity.getAuthor());
+        jdbcTemplate.update(sql, entity.getContent(), entity.getAuthor());
     }
 
     @Override
@@ -45,11 +41,10 @@ public class QuoteJDBCTemplate implements QuoteDAO {
                 entity.getContent(),
                 entity.getAuthor()
         };
-        jdbcTemplateObject.update(sql, args);
+        jdbcTemplate.update(sql, args);
     }
 
     @Override
-    //don't need it
     public void update(Quote entity) {
         String sql = "UPDATE quotes SET content = ?, author = ? WHERE id = ?";
         Object[] args = {
@@ -57,6 +52,6 @@ public class QuoteJDBCTemplate implements QuoteDAO {
                 entity.getAuthor(),
                 entity.getId()
         };
-        jdbcTemplateObject.update(sql, args);
+        jdbcTemplate.update(sql, args);
     }
 }

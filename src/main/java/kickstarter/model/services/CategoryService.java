@@ -18,4 +18,8 @@ public class CategoryService {
     public List<Category> getAllCategories(){
         return categoryDAO.getAllCategories();
     }
+
+    public Category getById(Integer categoryId) {
+        return categoryDAO.selectById(categoryId);
+    }
 }

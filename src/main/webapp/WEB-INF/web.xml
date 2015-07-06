@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsl="http://www.w3.org/2001/XMLSchema-instance"
-	xsl:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+		 xmlns:xsl="http://www.w3.org/2001/XMLSchema-instance"
+		 xsl:schemaLocation="http://java.sun.com/xml/ns/j2ee
+		 http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
 	version="2.4">
 
 	<display-name>Hello, World! Application</display-name>
@@ -33,6 +35,15 @@
 	<servlet-mapping>
 		<servlet-name>CategoryServlet</servlet-name>
 		<url-pattern>/category</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ProjectServlet</servlet-name>
+		<servlet-class>kickstarter.servlets.ProjectServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProjectServlet</servlet-name>
+		<url-pattern>/project</url-pattern>
 	</servlet-mapping>
 
 

@@ -11,11 +11,11 @@ Your inspiring quote, sir: <br/>
 <ul>
 <c:forEach var="category" items="${listOfCategories}">
     <c:url value="/category" var="categoryURL">
-        <c:param name="category-id" value="${category.getId()}"/>
+        <c:param name="category-id" value="${category.id}"/>
     </c:url>
     <li>
         <h2>
-            <a href="${categoryURL}">${category.getName()}</a>
+            <a href="${categoryURL}">${category.name}</a>
         </h2>
     </li>
 </c:forEach>

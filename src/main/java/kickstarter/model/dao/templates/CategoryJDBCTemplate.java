@@ -5,40 +5,37 @@ import kickstarter.model.dao.CategoryDAO;
 import kickstarter.model.dao.mappers.CategoryMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import javax.sql.DataSource;
 import java.util.List;
 
 public class CategoryJDBCTemplate implements CategoryDAO {
 
-    private DataSource dataSource;
-    private JdbcTemplate jdbcTemplateObject;
+    private JdbcTemplate jdbcTemplate;
+
+    @Override
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @Override
     public List<Category> getAllCategories() {
         String sql = "SELECT id, `name` FROM categories";
-        return jdbcTemplateObject.query(sql, new CategoryMapper());
-    }
-
-    @Override
-    public void setDataSource(DataSource ds) {
-        this.dataSource = ds;
-        this.jdbcTemplateObject = new JdbcTemplate(dataSource);
+        return jdbcTemplate.query(sql, new CategoryMapper());
     }
 
     @Override
     public Category selectById(Integer id) {
         String sql = "SELECT id, `name` FROM categories WHERE id = ?";
-        return jdbcTemplateObject.queryForObject(sql,
+        return jdbcTemplate.queryForObject(sql,
                 new Object[]{id}, new CategoryMapper());
     }
 
     @Override
     public void create(Category entity) {
-        String sql = "INSERT INTO categories (id, `name`) VALUE (?, ?)";
+        String sql = "INSERT INTO categories (`name`) VALUE (?)";
         Object[] args = {
-                entity.getId()
+                entity.getName()
         };
-        jdbcTemplateObject.queryForObject(sql, args, new CategoryMapper());
+        jdbcTemplate.update(sql, args);
     }
 
     @Override
@@ -47,7 +44,7 @@ public class CategoryJDBCTemplate implements CategoryDAO {
         Object[] args = {
                 entity.getId()
         };
-        jdbcTemplateObject.update(sql, args);
+        jdbcTemplate.update(sql, args);
     }
 
     @Override
@@ -57,6 +54,6 @@ public class CategoryJDBCTemplate implements CategoryDAO {
                 entity.getName(),
                 entity.getId()
         };
-        jdbcTemplateObject.update(sql, args);
+        jdbcTemplate.update(sql, args);
     }
 }

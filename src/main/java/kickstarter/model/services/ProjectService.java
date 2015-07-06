@@ -1,11 +1,11 @@
 package kickstarter.model.services;
 
+import kickstarter.entities.Project;
 import kickstarter.model.dao.ProjectDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 
-/**
- * Created by User on 29.06.2015.
- */
+import java.util.List;
+
 public class ProjectService {
 
     @Autowired
@@ -13,5 +13,13 @@ public class ProjectService {
 
     public ProjectService(ProjectDAO projectDAO) {
         this.projectDAO = projectDAO;
+    }
+
+    public List<Project> getAllProjectsOfCategory(Integer categoryId) {
+        return projectDAO.getAllProjectsOfCategory(categoryId);
+    }
+
+    public Project getById(Integer projectId) {
+        return projectDAO.selectById(projectId);
     }
 }

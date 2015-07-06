@@ -31,6 +31,18 @@ public class Project {
 		this.link = link;
 	}
 
+	public Project(int categoryId, String name, String shortDescription, int moneyGoal, int pledged, int totalDays, DateTime addingDate, String fullDescription, String link) {
+		this.categoryId = categoryId;
+		this.name = name;
+		this.shortDescription = shortDescription;
+		this.moneyGoal = moneyGoal;
+		this.pledged = pledged;
+		this.totalDays = totalDays;
+		this.addingDate = addingDate;
+		this.fullDescription = fullDescription;
+		this.link = link;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -78,5 +90,9 @@ public class Project {
 
 	public DateTime getAddingDate() {
 		return addingDate;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 }

@@ -4,6 +4,6 @@ import kickstarter.entities.Quote;
 
 public interface QuoteDAO extends DAO<Quote> {
 
-    public Quote getRandom();
+    Quote getRandom();
 
 }

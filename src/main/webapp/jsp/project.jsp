@@ -1,16 +1,19 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: User
-  Date: 03.07.2015
-  Time: 0:06
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<%--@elvariable id="project" type="kickstarter.entities.Project"--%>
 <head>
-    <title></title>
+    <title>Category <c:out value="${project.name}"/></title>
 </head>
 <body>
-
+Project <c:out value="${project.name}"/>
+<h3>
+    shortDescription: <c:out value="${project.shortDescription}"/> <br/>
+    daysToGo(): <c:out value="${project.daysToGo()}"/> <br/>
+    moneyGoal: <c:out value="${project.moneyGoal}"/> <br/>
+    pledged: <c:out value="${project.pledged}"/> <br/>
+    addingDate: <c:out value="${project.addingDate}"/> <br/>
+    fullDescription: <c:out value="${project.fullDescription}"/> <br/>
+</h3>
 </body>
 </html>
