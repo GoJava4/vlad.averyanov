@@ -1,4 +1,4 @@
-package kickstarter.model.dao.mappers;
+package kickstarter.model.dao.jdbctemplate.mappers;
 
 import kickstarter.entities.Category;
 import org.springframework.jdbc.core.RowMapper;
