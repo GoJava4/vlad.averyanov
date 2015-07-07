@@ -1,7 +1,5 @@
 package kickstarter.entities;
 
-
-import kickstarter.model.dao.DAO;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 
