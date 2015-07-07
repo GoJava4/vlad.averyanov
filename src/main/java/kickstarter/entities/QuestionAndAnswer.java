@@ -7,11 +7,9 @@ public class QuestionAndAnswer {
     String question;
     String answer;
 
-<<<<<<< Updated upstream:src/main/java/kickstarter/entities/QuestionAndAnswer.java
     public QuestionAndAnswer(int id, String content, int projectId) {
-=======
+    }
     public QuestionAndAnswer(int id, int projectId, String question) {
->>>>>>> Stashed changes:src/main/java/kickstarter/entities/QuestionAndAnswer.java
         this.id = id;
         this.projectId = projectId;
         this.question = question;

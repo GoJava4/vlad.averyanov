@@ -1,12 +1,8 @@
 package kickstarter.model.dao;
 
-import javax.sql.DataSource;
-
 public interface DAO<T> {
 
-    void setDataSource(DataSource ds);
-
-    T selectById(Integer id);
+    T getById(Integer id);
 
     void create(T entity);
 
