@@ -1,10 +1,22 @@
 package kickstarter.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "quotes")
 public class Quote {
 
+	@Id
+	@GeneratedValue
 	private Integer id;
 	private String content;
 	private String author;
+
+	public Quote() {
+	}
 
 	public Quote(String content, String author) {
 		this.content = content;

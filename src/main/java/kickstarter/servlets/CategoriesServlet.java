@@ -21,10 +21,10 @@ public class CategoriesServlet extends SpringInitedServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-			Quote quote = quoteService.getRandomQuote();
-			req.setAttribute("quote", quote.getQuoteString());
-			req.setAttribute("listOfCategories", categoryService.getAllCategories());
-			req.getRequestDispatcher("jsp/categories.jsp").forward(req, resp);
+		Quote quote = quoteService.getRandomQuote();
+		req.setAttribute("quote", quote.getQuoteString());
+		req.setAttribute("listOfCategories", categoryService.getAllCategories());
+		req.getRequestDispatcher("jsp/categories.jsp").forward(req, resp);
 	}
 
 	@Override

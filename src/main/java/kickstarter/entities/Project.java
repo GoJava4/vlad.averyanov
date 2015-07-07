@@ -2,10 +2,18 @@ package kickstarter.entities;
 
 import org.joda.time.DateTime;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "projects")
 public class Project {
 
+	@Id
+	@GeneratedValue
 	private int id;
-	private int categoryId;
+	@ManyToOne
+	@JoinColumn(name = "category_id")
+	private Category category;
 	private String name;
 	private String shortDescription;
 	private int moneyGoal;
@@ -18,18 +26,6 @@ public class Project {
 	public Project() {
 	}
 
-	public Project(int id, int categoryId, String name, String shortDescription, int moneyGoal, int pledged, int totalDays, DateTime addingDate, String fullDescription, String link) {
-		this.id = id;
-		this.categoryId = categoryId;
-		this.name = name;
-		this.shortDescription = shortDescription;
-		this.moneyGoal = moneyGoal;
-		this.pledged = pledged;
-		this.totalDays = totalDays;
-		this.addingDate = addingDate;
-		this.fullDescription = fullDescription;
-		this.link = link;
-	}
 
 	public Project(int categoryId, String name, String shortDescription, int moneyGoal, int pledged, int totalDays, DateTime addingDate, String fullDescription, String link) {
 		this.categoryId = categoryId;
@@ -58,10 +54,6 @@ public class Project {
 
 	private int millisInDays(long millis) {
 		return (int)millis/(60*60*1000);
-	}
-
-	public int getCategoryId() {
-		return categoryId;
 	}
 
 	public String getShortDescription() {

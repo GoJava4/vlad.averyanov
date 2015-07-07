@@ -1,10 +1,10 @@
 package kickstarter.model.dao;
 
-import org.springframework.jdbc.core.JdbcTemplate;
+import javax.sql.DataSource;
 
 public interface DAO<T> {
 
-    void setJdbcTemplate(JdbcTemplate jdbcTemplate);
+    void setDataSource(DataSource ds);
 
     T selectById(Integer id);
 

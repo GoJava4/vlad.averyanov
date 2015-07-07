@@ -1,7 +1,16 @@
 package kickstarter.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "categories")
 public class Category {
 
+	@Id
+	@GeneratedValue
 	private int id;
 	private String name;
 
@@ -10,8 +19,7 @@ public class Category {
 		this.name = name;
 	}
 
-	public Category(String name) {
-		this.name = name;
+	public Category() {
 	}
 
 	public int getId() {
