@@ -1,8 +1,12 @@
 package kickstarter.entities;
 
+
+import kickstarter.model.dao.DAO;
 import org.joda.time.DateTime;
+import org.joda.time.Days;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Table(name = "projects")
@@ -15,11 +19,21 @@ public class Project {
 	@JoinColumn(name = "category_id")
 	private Category category;
 	private String name;
+
+	@Column(name = "short_description")
 	private String shortDescription;
+
+	@Column(name = "money_goal")
 	private int moneyGoal;
 	private int pledged;
+
+	@Column(name = "total_days")
 	private int totalDays;
-	private DateTime addingDate;
+
+	@Column(name = "adding_date")
+	private java.sql.Date addingDate;
+
+	@Column(name = "full_description")
 	private String fullDescription;
 	private String link;
 
@@ -35,8 +49,8 @@ public class Project {
 	}
 
 	public int daysToGo(){
-		DateTime daysLeft = DateTime.now().minusMillis((int)addingDate.getMillis());
-		return millisInDays(daysLeft.getMillis());
+		DateTime dateTime = new DateTime(addingDate);
+		return Days.daysBetween(dateTime, DateTime.now()).getDays();
 	}
 
 	private int millisInDays(long millis) {
@@ -67,7 +81,7 @@ public class Project {
 		return link;
 	}
 
-	public DateTime getAddingDate() {
+	public Date getAddingDate() {
 		return addingDate;
 	}
 
