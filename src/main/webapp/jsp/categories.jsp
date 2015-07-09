@@ -10,8 +10,8 @@ Your inspiring quote, sir: <br/>
 <c:out value="${quote}"/>
 <ul>
 <c:forEach var="category" items="${listOfCategories}">
-    <c:url value="/category" var="categoryURL">
-        <c:param name="category-id" value="${category.id}"/>
+    <c:url value="/category/${category.id}" var="categoryURL">
+        <%--<c:param name="categoryId" value="${category.id}"/>--%>
     </c:url>
     <li>
         <h2>

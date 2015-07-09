@@ -13,6 +13,13 @@
     <context:component-scan base-package="kickstarter"/>
     <tx:annotation-driven/>
 
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass"
+                  value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/jsp/" />
+    </bean>
+
     <!-- Initialization for data source -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="maxActive" value="10"/>

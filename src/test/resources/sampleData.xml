@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
-    <categories name="name 1"/>
-    <categories name="name 2"/>
+    <categories id="1" name="category 1"/>
+    <categories id="2" name="category 2"/>
+    <categories id="3" name="category 3"/>
 
     <projects id="1"
               category_id="1"
@@ -57,4 +58,8 @@
               total_days="36"
               full_description="Full Descr 6"
               link="Video Url 6"/>
+
+    <quotes id="1" content="quote 1" author="author 1"/>
+    <quotes id="2" content="quote 2" author="author 2"/>
+    <quotes id="3" content="quote 3" author="author 3"/>
 </dataset>

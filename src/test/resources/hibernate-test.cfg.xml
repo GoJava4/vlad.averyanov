@@ -4,8 +4,10 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
         <property name="show_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
+        <!--<property name="hibernate.cache.provider_class">org.hibernate.cache.HashtableCacheProvider</property>-->
         <mapping class="kickstarter.entities.Quote"/>
         <mapping class="kickstarter.entities.Project"/>
         <mapping class="kickstarter.entities.Category"/>

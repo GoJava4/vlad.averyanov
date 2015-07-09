@@ -9,7 +9,7 @@ Projects of <c:out value="${category.name}"/>
 <ul>
     <c:forEach var="project" items="${projectList}">
         <c:url value="/project" var="projectURL">
-            <c:param name="project-id" value="${project.id}"/>
+            <c:param name="projectId" value="${project.id}"/>
         </c:url>
         <li>
             <h3>
