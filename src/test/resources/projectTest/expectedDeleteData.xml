@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
     <projects category_id="1"
-              name="Updated Project"
+              name="Project 1"
               short_description="Short Descr 1"
               money_goal="5000"
               pledged="1000"
@@ -13,24 +13,24 @@
               short_description="Short Descr 2"
               money_goal="25000"
               pledged="2000"
-              total_days="32"
+              total_days="30"
               full_description="Full Descr 2"
               link="Video Url 2"/>
-    <projects category_id="2"
-              name="Project 3"
-              short_description="Short Descr 3"
-              money_goal="35000"
-              pledged="3000"
-              total_days="33"
-              full_description="Full Descr 3"
-              link="Video Url 3"/>
     <!--deleted project-->
+    <projects category_id="1"
+              name="Project 4"
+              short_description="Short Descr 4"
+              money_goal="45000"
+              pledged="4000"
+              total_days="30"
+              full_description="Full Descr 4"
+              link="Video Url 4"/>
     <projects category_id="1"
               name="Project 5"
               short_description="Short Descr 5"
               money_goal="55000"
               pledged="5000"
-              total_days="35"
+              total_days="30"
               full_description="Full Descr 5"
               link="Video Url 5"/>
     <projects category_id="2"
@@ -38,7 +38,7 @@
               short_description="Short Descr 6"
               money_goal="65000"
               pledged="6000"
-              total_days="36"
+              total_days="30"
               full_description="Full Descr 6"
               link="Video Url 6"/>
 </dataset>
