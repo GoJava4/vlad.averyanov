@@ -51,10 +51,6 @@ public class Project {
 		return Days.daysBetween(dateTime, DateTime.now()).getDays();
 	}
 
-	private int millisInDays(long millis) {
-		return (int)millis/(60*60*1000);
-	}
-
 	public String getShortDescription() {
 		return shortDescription;
 	}

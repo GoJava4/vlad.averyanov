@@ -28,7 +28,7 @@
               money_goal="35000"
               pledged="3000"
               total_days="30"
-              adding_date="33"
+              adding_date="2011-01-18 00:00:00.0"
               full_description="Full Descr 3"
               link="Video Url 3"/>
     <projects category_id="1"
@@ -49,8 +49,7 @@
               adding_date="2011-01-18 00:00:00.0"
               full_description="Full Descr 5"
               link="Video Url 5"/>
-    <projects id="6"
-              category_id="2"
+    <projects category_id="2"
               name="Project 6"
               short_description="Short Descr 6"
               money_goal="65000"

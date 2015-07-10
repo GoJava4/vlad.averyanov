@@ -44,20 +44,12 @@ public class ProjectDAOImplTest {
     }
 
     @Test
-    @Ignore
     @ExpectedDatabase(value = "classpath:projectTest/expectedCreateData.xml",
             table = "projects",
             assertionMode = DatabaseAssertionMode.NON_STRICT)
     public void testCreate() throws Exception {
         Project project = projectDAO.getById(1);
         project.setName("New Project");
-        project.setCategory(categoryDAO.getById(2));
-//        short_description="Short Descr 1"
-//        money_goal="5000"
-//        pledged="1000"
-//        total_days="30"
-//        full_description="Full Descr 1"
-//        link="Video Url 1"
         projectDAO.create(project);
     }
 
