@@ -6,6 +6,7 @@
 </head>
 <%--@elvariable id="listOfCategories" type="java.utils.List<Category>"--%>
 <body>
+<jsp:include page="menu.jsp"/>
 Your inspiring quote, sir: <br/>
 <c:out value="${quote}"/>
 <ul>

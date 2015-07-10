@@ -6,6 +6,7 @@
     <title>Category <c:out value="${project.name}"/></title>
 </head>
 <body>
+<jsp:include page="menu.jsp"/>
 Project <c:out value="${project.name}"/>
 <h3>
     shortDescription: <c:out value="${project.shortDescription}"/> <br/>

@@ -5,6 +5,7 @@
     <title>Category <c:out value="${category.name}"/></title>
 </head>
 <body>
+<jsp:include page="menu.jsp"/>
 Projects of <c:out value="${category.name}"/>
 <ul>
     <c:forEach var="project" items="${projectList}">
