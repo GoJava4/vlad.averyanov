@@ -17,25 +17,21 @@ public abstract class AbstractDAO<T> implements DAO<T> {
     }
 
     @Override
-    @Transactional
     public void create(T entity) {
         sessionFactory.getCurrentSession().save(entity);
     }
 
     @Override
-    @Transactional
     public T getById(Integer id) {
         return (T) sessionFactory.getCurrentSession().get(type, id);
     }
 
     @Override
-    @Transactional
     public void update(T entity) {
         sessionFactory.getCurrentSession().update(entity);
     }
 
     @Override
-    @Transactional
     public void delete(T entity) {
         sessionFactory.getCurrentSession().delete(entity);
     }

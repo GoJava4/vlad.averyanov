@@ -86,4 +86,8 @@ public class Project {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+
+	public void setMoneyGoal(int moneyGoal) {
+		this.moneyGoal = moneyGoal;
+	}
 }

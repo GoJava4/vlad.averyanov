@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface ProjectDAO extends DAO<Project> {
 
-    @Transactional
     List<Project> getAllProjectsOfCategory(int categoryId);
 
 }

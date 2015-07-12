@@ -15,7 +15,6 @@ public class CategoryDAOImpl extends AbstractDAO<Category> implements CategoryDA
     }
 
     @Override
-    @Transactional
     public List<Category> getAllCategories() {
         return sessionFactory.getCurrentSession().createCriteria(Category.class).list();
     }

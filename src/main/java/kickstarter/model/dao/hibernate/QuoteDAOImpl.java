@@ -14,7 +14,6 @@ public class QuoteDAOImpl extends AbstractDAO<Quote> implements QuoteDAO {
     }
 
     @Override
-    @Transactional
     public Quote getRandom() {
         Session currentSession = sessionFactory.getCurrentSession();
         return (Quote) currentSession.createSQLQuery("SELECT * FROM quotes ORDER BY RAND() LIMIT 1").addEntity(Quote.class).uniqueResult();

@@ -18,7 +18,6 @@ public class ProjectDAOImpl extends AbstractDAO<Project> implements ProjectDAO {
     }
 
     @Override
-    @Transactional
     public List<Project> getAllProjectsOfCategory(int categoryId) {
         Session currentSession = sessionFactory.getCurrentSession();
         List<Project> list = currentSession.createCriteria(Project.class)

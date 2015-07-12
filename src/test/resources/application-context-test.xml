@@ -11,7 +11,7 @@
 						http://www.springframework.org/schema/tx/spring-tx.xsd">
     <context:annotation-config />
     <context:component-scan base-package="kickstarter"/>
-    <tx:annotation-driven/>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <!-- Initialization for data source -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
